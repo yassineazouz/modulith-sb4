@@ -1,1 +1,1 @@
-# demo-modulith-sb4
+# modulith-sb4
