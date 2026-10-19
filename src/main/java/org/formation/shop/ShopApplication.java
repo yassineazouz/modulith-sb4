@@ -1,13 +1,13 @@
-package org.formation;
+package org.formation.shop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
+@EnableAsync
 @SpringBootApplication
-public class DemoModulithSb4Application {
-
+public class ShopApplication {
     public static void main(String[] args) {
-        SpringApplication.run(DemoModulithSb4Application.class, args);
+        SpringApplication.run(ShopApplication.class, args);
     }
-
 }
