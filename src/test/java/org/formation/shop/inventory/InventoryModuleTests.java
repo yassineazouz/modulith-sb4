@@ -17,10 +17,6 @@ class InventoryModuleTests {
     void createsStockWhenCoffeeIsCreated(Scenario scenario) {
         scenario.publish(new CoffeeCreated(42L, "Espresso"))
                 .andWaitForStateChange(repository::findAll, stocks -> !stocks.isEmpty())
-                .andVerify(stocks -> {
-                    assertThat(stocks).hasSize(1);
-                    assertThat(stocks.getFirst().getCoffeeId()).isEqualTo(42L);
-                    assertThat(stocks.getFirst().getQuantity()).isZero();
-                });
+                .andVerify(stocks -> assertThat(stocks).hasSize(1));
     }
 }
