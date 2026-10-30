@@ -5,15 +5,15 @@ import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class InventoryListener {
+class InventoryListener {
     private final StockRepository repository;
 
-    public InventoryListener(StockRepository repository) {
+    InventoryListener(StockRepository repository) {
         this.repository = repository;
     }
 
     @ApplicationModuleListener
-    public void on(CoffeeCreated event) {
+    void on(CoffeeCreated event) {
         repository.save(new StockEntity(event.coffeeId(), 0));
     }
 }

@@ -11,12 +11,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ApplicationModuleTest
 class InventoryModuleTests {
-    @Autowired StockRepository repository;
+    @Autowired
+    StockRepository stockRepository;
 
     @Test
-    void createsStockWhenCoffeeIsCreated(Scenario scenario) {
-        scenario.publish(new CoffeeCreated(42L, "Espresso"))
-                .andWaitForStateChange(repository::findAll, stocks -> !stocks.isEmpty())
+    void createsStockOnCoffeeCreated(Scenario scenario) {
+        scenario.publish(new CoffeeCreated(1L, "Espresso"))
+                .andWaitForStateChange(() -> stockRepository.findAll())
                 .andVerify(stocks -> assertThat(stocks).hasSize(1));
     }
 }

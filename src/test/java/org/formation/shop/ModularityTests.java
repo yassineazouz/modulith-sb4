@@ -5,7 +5,7 @@ import org.springframework.modulith.core.ApplicationModules;
 
 class ModularityTests {
     @Test
-    void verifiesModuleBoundaries() {
+    void verifiesModuleStructure() {
         ApplicationModules.of(ShopApplication.class).verify();
     }
 }
