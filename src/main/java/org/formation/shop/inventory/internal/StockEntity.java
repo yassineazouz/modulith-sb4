@@ -20,6 +20,7 @@ public class StockEntity {
         this.quantity = quantity;
     }
 
-    public Long getId() { return id; }
-    public Long getCoffeeId() { return coffeeId; }
+    public Long getCoffeeId() {
+        return coffeeId;
+    }
 }
