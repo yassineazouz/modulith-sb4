@@ -23,4 +23,8 @@ public class StockEntity {
     public Long getCoffeeId() {
         return coffeeId;
     }
+    
+    public int getQuantity(){
+        return quantity ; 
+    }
 }

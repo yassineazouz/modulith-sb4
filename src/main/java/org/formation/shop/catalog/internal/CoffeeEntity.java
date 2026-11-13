@@ -24,6 +24,10 @@ public class CoffeeEntity {
         return id;
     }
 
+    public int getPrice(){
+        return price ; 
+    }
+
     public String getName() {
         return name;
     }
